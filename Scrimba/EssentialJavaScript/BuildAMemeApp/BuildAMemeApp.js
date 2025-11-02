@@ -37,15 +37,17 @@ function getMatchingCatsArray(){
 function getSingleCatObject(){
     
     const catsArray = getMatchingCatsArray()
-    console.log(catsArray)
+    
+    if (catsArray.length === 1){
+        console.log(catsArray[0])
+    }
+    else {
 /*
 Challenge:
-1. Set up an if to check if there is only one
-   cat object in the array. If there is, log
-   out that cat object (but not the whole array!)
-   {}
-   Test: "happy", animated GIFS only checked.
-*/  
+1. If catsArray has more than one object, 
+   select an object at random and log it out.
+*/ 
+    }
     
 }
 
