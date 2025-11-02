@@ -39,9 +39,11 @@ function getSingleCatObject(){
     const catsArray = getMatchingCatsArray()
     
     if (catsArray.length === 1){
-        console.log(catsArray[0])
+        return catsArray[0]
     }
     else {
+        const randomNumber = Math.floor(Math.random() * catsArray.length)
+        return catsArray[randomNumber]
 /*
 Challenge:
 1. If catsArray has more than one object, 
