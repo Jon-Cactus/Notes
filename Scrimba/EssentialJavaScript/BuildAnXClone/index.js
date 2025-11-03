@@ -19,13 +19,11 @@ function handleLikeClick(tweetId){
     
     if (targetTweetObj.isLiked) {
         targetTweetObj.isLiked = false
-        targetTweetObj.likes--
         
     } else {
-        targetTweetObj.isLiked = true
-        targetTweetObj.likes++
-        
+        targetTweetObj.isLiked = true    
     }
+    targetTweetObj.isLiked = !targetTweetObj.isLiked
 /*
 Challenge:
 1. When a tweet is liked, it's 'isLiked' property
