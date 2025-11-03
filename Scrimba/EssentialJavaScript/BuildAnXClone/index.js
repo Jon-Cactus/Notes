@@ -8,32 +8,55 @@ tweetBtn.addEventListener('click', function(){
 
 document.addEventListener('click', function(e){
     if(e.target.dataset.like){
-       handleLikeClick(e.target.dataset.like) 
+        handleLikeClick(e.target.dataset.like) 
     }
+    
+    else if(e.target.dataset.retweet) {
+        handleRetweetClick(e.target.dataset.retweet)
+    }
+/*
+Challenge:
+1. Make this eventListener call "handleRetweetClick" 
+   when the retweet icon is clicked, passing in the
+   uuid from that tweet.  
+*/
 })
 
 function handleLikeClick(tweetId){ 
     const targetTweetObj = tweetsData.filter(function(tweet){
         return tweet.uuid === tweetId
     })[0]
-    
-    if (targetTweetObj.isLiked) {
-        targetTweetObj.isLiked = false
-        
-    } else {
-        targetTweetObj.isLiked = true    
+
+    if (targetTweetObj.isLiked){
+        targetTweetObj.likes--
+    }
+    else{
+        targetTweetObj.likes++ 
     }
     targetTweetObj.isLiked = !targetTweetObj.isLiked
+    render()
+}
+
+function handleRetweetClick(tweetId){
+    const targetTweetObj = tweetsData.filter(function(tweet) {
+        return tweet.uuid === tweetId
+    })[0]
+    
+    if (targetTweetObj.isRetweeted) {
+        targetTweetObj.retweets--
+    } else {
+        targetTweetObj.retweets++
+    }
+    targetTweetObj.isRetweeted = !targetTweetObj.isRetweeted
+    render()
 /*
 Challenge:
-1. When a tweet is liked, it's 'isLiked' property
-   should be set to true.
-2. When a tweet is unliked, it's 'isLiked' property
-   should be set to false and its 'likes' count
-   should be decremented.
+2. Find the retweeted tweet's object in tweetsData 
+   and save it to a const.
+3. Increment or decrement the retweet count of the 
+   tweet and flip its isRetweeted boolean.
+4. Call the render function.  
 */   
-    
-    render()
 }
 
 function getFeedHtml(){
