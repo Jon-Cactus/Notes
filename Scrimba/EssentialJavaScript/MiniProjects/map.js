@@ -7,7 +7,7 @@ Challenge
    ⚠️ Don't worry about the commas for now.
 */
 
-const playlistHtml = playlistArr.map(function(song, index) {
+const playlistHtml = playlistArr.map(function(song) {
    return `
 <section class="card">
     <div class="card-start">
@@ -22,6 +22,6 @@ const playlistHtml = playlistArr.map(function(song, index) {
     </div>
 </section>
     `
-})
+}).join('')
 
 document.getElementById('container').innerHTML = playlistHtml
