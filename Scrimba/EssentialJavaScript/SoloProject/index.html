@@ -1,0 +1,36 @@
+<html>
+    <head>
+       <link rel="stylesheet" href="index.css">
+    </head>
+    <body>
+        <header class="hero">
+            <h1>Jimmy's Diner</h1>
+        </header>
+        <main class="menu" id="menu-div">
+            
+        </main>
+        <section class="cart hidden" id="cart-div">
+            <h2>Your Order</h2>
+            <div class="cart-items" id="cart-items-container"></div>
+            <div class="cart-total">
+                <span>
+                    <h2>Total price:</h2>
+                    <p id="cart-total"></p>
+                </span>
+            </div>
+            <button id="complete-order-btn">Complete order</button>
+        </section>
+        <div class="checkout-modal hidden" id="checkout-modal">
+            <h3>Enter card details</h3>
+            <form id="payment-form" target=>
+                <input placeholder="Enter your name" id="name-input" required>
+                <input placeholder="Enter card number" id="card-number-input" required>
+                <input placeholder="Enter CVV" id="card-cvv-input" required>
+                <button type="submit" class="pay-btn">Pay</button>
+            </form>
+        </div>
+        <div class="order-complete-modal hidden" id="order-complete-modal"></div>
+	<script src="index.js" type="module"></script>
+    </body>
+</html>
+
